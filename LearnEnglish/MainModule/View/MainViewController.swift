@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    print("hello")
+    
     
     private var wordsScreen = WordsScreenVC()
     private var trainingScreen = TrainingScreenVC()
@@ -51,6 +51,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        print("hello 2")
         
         configureViewControllers()
         setupConstraints()

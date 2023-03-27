@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    print("hello")
     
     private var wordsScreen = WordsScreenVC()
     private var trainingScreen = TrainingScreenVC()

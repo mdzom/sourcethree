@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7863AE4129D19C16007E4999 /* TrainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863AE4029D19C16007E4999 /* TrainVC.swift */; };
+		7863AE4529D2EA33007E4999 /* MainModuleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863AE4429D2EA33007E4999 /* MainModuleDelegate.swift */; };
+		7863AE4729D2EB05007E4999 /* MainViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863AE4629D2EB05007E4999 /* MainViewController+Extension.swift */; };
+		7863AE9029D6D5A7007E4999 /* words5000.json in Resources */ = {isa = PBXBuildFile; fileRef = 7863AE8F29D6D5A7007E4999 /* words5000.json */; };
+		7863AE9229D6D91C007E4999 /* parsingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863AE9129D6D91C007E4999 /* parsingJSON.swift */; };
 		78B2A94529C9CF3E0054569B /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2A94429C9CF3E0054569B /* TableViewAdapter.swift */; };
 		78B2A94729C9D54F0054569B /* StudiedWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B2A94629C9D54F0054569B /* StudiedWordCell.swift */; };
 		78E06ED229C4756900CB4228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E06ED129C4756900CB4228 /* AppDelegate.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7863AE4029D19C16007E4999 /* TrainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainVC.swift; sourceTree = "<group>"; };
+		7863AE4429D2EA33007E4999 /* MainModuleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleDelegate.swift; sourceTree = "<group>"; };
+		7863AE4629D2EB05007E4999 /* MainViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Extension.swift"; sourceTree = "<group>"; };
+		7863AE8F29D6D5A7007E4999 /* words5000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words5000.json; sourceTree = "<group>"; };
+		7863AE9129D6D91C007E4999 /* parsingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parsingJSON.swift; sourceTree = "<group>"; };
 		78B2A94429C9CF3E0054569B /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
 		78B2A94629C9D54F0054569B /* StudiedWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiedWordCell.swift; sourceTree = "<group>"; };
 		78E06ECE29C4756900CB4228 /* LearnEnglish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnEnglish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +83,7 @@
 		782EA19E29C9CB6600E4CAE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7863AE4029D19C16007E4999 /* TrainVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 				78E06EFA29C6B4BE00CB4228 /* LearnedModule */,
 				782EA19C29C9CAA300E4CAE4 /* TrainModule */,
 				78E06EDA29C4756A00CB4228 /* Assets.xcassets */,
+				7863AE8F29D6D5A7007E4999 /* words5000.json */,
 				78E06EDC29C4756A00CB4228 /* LaunchScreen.storyboard */,
 				78E06EDF29C4756A00CB4228 /* Info.plist */,
 			);
@@ -153,6 +165,7 @@
 		78E06EF329C69F9500CB4228 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7863AE4629D2EB05007E4999 /* MainViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +205,7 @@
 			children = (
 				78B2A94429C9CF3E0054569B /* TableViewAdapter.swift */,
 				78E06F3429C6F72700CB4228 /* Protocols */,
+				7863AE9129D6D91C007E4999 /* parsingJSON.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +276,7 @@
 		78E06F3429C6F72700CB4228 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				7863AE4429D2EA33007E4999 /* MainModuleDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -332,6 +347,7 @@
 			files = (
 				78E06EDE29C4756A00CB4228 /* LaunchScreen.storyboard in Resources */,
 				78E06EDB29C4756A00CB4228 /* Assets.xcassets in Resources */,
+				7863AE9029D6D5A7007E4999 /* words5000.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,8 +367,12 @@
 				78B2A94729C9D54F0054569B /* StudiedWordCell.swift in Sources */,
 				78E06F0729C6B6A400CB4228 /* TrainingScreenVC.swift in Sources */,
 				78E06ED429C4756900CB4228 /* SceneDelegate.swift in Sources */,
+				7863AE4729D2EB05007E4999 /* MainViewController+Extension.swift in Sources */,
+				7863AE9229D6D91C007E4999 /* parsingJSON.swift in Sources */,
 				78E06F0929C6B6BF00CB4228 /* LearnedScreenVC.swift in Sources */,
+				7863AE4529D2EA33007E4999 /* MainModuleDelegate.swift in Sources */,
 				78E06EFF29C6B5F700CB4228 /* MainViewController.swift in Sources */,
+				7863AE4129D19C16007E4999 /* TrainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

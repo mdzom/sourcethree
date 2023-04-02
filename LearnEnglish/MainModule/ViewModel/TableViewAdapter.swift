@@ -9,16 +9,15 @@ import UIKit
 
 final class TableViewAdapter: NSObject, UITableViewDataSource {
 //---
-    let numberOfCells: Int
+    let wordModel: [WordModel]
 //---
     private let tableView: UITableView
     
     
     
-    init(tableView: UITableView, numberOfCells: Int) {
+    init(tableView: UITableView, wordModel: [WordModel]) {
         self.tableView = tableView
-
-        self.numberOfCells = numberOfCells
+        self.wordModel = wordModel
         super.init()
         self.tableView.register(WordCell.self, forCellReuseIdentifier: WordCell.reuseId)
         self.tableView.allowsSelection = false
@@ -27,11 +26,15 @@ final class TableViewAdapter: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfCells
+        return wordModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.reuseId) else { fatalError() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.reuseId,
+                                                       for: indexPath) as? WordCell else {
+            return UITableViewCell()
+        }
+        cell.setupCell(wordModel[indexPath.row])
         return cell
     }
     

@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     
     private var wordsScreen = WordsScreenVC()
     private var trainingScreen = TrainingScreenVC()
+//    let navigation = UINavigationController(rootViewController: TrainingScreenVC())
     private var learnedScreen = LearnedScreenVC()
     
     private lazy var firstButton: SwitchButton = {
@@ -50,29 +51,25 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
         configureViewControllers()
         setupConstraints()
         
         view.backgroundColor = UIColor(named: "blueColor")
-        
-//        secondButton.color = .purple
     }
     
     private func setupViews() {
         view.addSubview(stackView)
+        trainingScreen.delegate = self
     }
     
     private func setupConstraints() {
-//        let screenWidth = UIScreen.main.bounds.width
-//        print("Ширина экрана: \(screenWidth)")
-        
         stackView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             $0.left.right.equalToSuperview().inset(16)
         }
         [wordsScreen.view,
          trainingScreen.view,
+//         navigation.view,
          learnedScreen.view].forEach {
             $0?.snp.makeConstraints({ make in
                 make.left.right.bottom.equalToSuperview()
@@ -84,20 +81,24 @@ class MainViewController: UIViewController {
     private func configureViewControllers() {
         addChild(wordsScreen)
         addChild(trainingScreen)
+//        addChild(navigation)
         addChild(learnedScreen)
         
         view.addSubview(wordsScreen.view)
         view.addSubview(trainingScreen.view)
+//        view.addSubview(navigation.view)
         view.addSubview(learnedScreen.view)
         
         wordsScreen.didMove(toParent: self)
         trainingScreen.didMove(toParent: self)
+//        navigation.didMove(toParent: self)
         learnedScreen.didMove(toParent: self)
     }
     
     private func hiddenVC() {
         wordsScreen.view.isHidden = true
         trainingScreen.view.isHidden = true
+//        navigation.view.isHidden = true
         learnedScreen.view.isHidden = true
     }
     
@@ -110,6 +111,7 @@ class MainViewController: UIViewController {
     @objc private func secondButtonPush() {
         hiddenVC()
         trainingScreen.view.isHidden = false
+//        navigation.view.isHidden = false
         
     }
     

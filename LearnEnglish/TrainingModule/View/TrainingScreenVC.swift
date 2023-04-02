@@ -9,6 +9,9 @@ import UIKit
 
 class TrainingScreenVC: UIViewController {
     
+    let array = parsingJSON()
+    
+    weak var delegate: MainModuleDelegate?
     private var adapter: TableViewAdapter?
     
     private lazy var startLearningButton: UIButton = {
@@ -26,16 +29,16 @@ class TrainingScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupViews()
         setupConstraints()
-        view.backgroundColor = .white
-        adapter = TableViewAdapter(tableView: tableView, numberOfCells: 6)
         
     }
     
     private func setupViews() {
         view.addSubview(tableView)
         view.addSubview(startLearningButton)
+        adapter = TableViewAdapter(tableView: tableView, wordModel: array)
     }
     
     private func setupConstraints() {
@@ -51,7 +54,7 @@ class TrainingScreenVC: UIViewController {
     }
     
     @objc private func startLearn() {
-        print("learn")
+        delegate?.startTraining()
     }
 
 }

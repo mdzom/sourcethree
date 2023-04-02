@@ -9,6 +9,8 @@ import UIKit
 
 class LearnedScreenVC: UIViewController {
     
+    let array = parsingJSON()
+    
     private var adapter: TableViewAdapter?
     
     private lazy var tableView: UITableView = {
@@ -20,7 +22,7 @@ class LearnedScreenVC: UIViewController {
         setupViews()
         setupConstraints()
         view.backgroundColor = .white
-        adapter = TableViewAdapter(tableView: tableView, numberOfCells: 3)
+        adapter = TableViewAdapter(tableView: tableView, wordModel: array)
     }
     
     private func setupViews() {

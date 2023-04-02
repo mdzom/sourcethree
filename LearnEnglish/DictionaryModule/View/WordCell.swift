@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import AVFAudio
 
 final class WordCell: UITableViewCell {
     
     static let reuseId = "WordCell"
+    
+    private let synthesizer = AVSpeechSynthesizer()
+    var text = ""
     
     private lazy var roundedView: UIView = {
         let view = UIView()
@@ -68,6 +72,12 @@ final class WordCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupCell(_ word: WordModel) {
+        wordLabel.text = word.word
+        useCaseLabel.text = word.translate
+        text = word.word
+    }
+    
     private func setupViews() {
         contentView.addSubview(roundedView)
         contentView.addSubview(playSoundButton)
@@ -93,7 +103,8 @@ final class WordCell: UITableViewCell {
     }
     
     @objc private func soundButtonTapped() {
-        print("push")
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        synthesizer.speak(utterance)
     }
-
 }

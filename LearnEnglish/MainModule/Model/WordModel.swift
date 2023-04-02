@@ -6,8 +6,10 @@
 //
 
 import Foundation
-struct WordModel {
+
+struct WordModel: Decodable {
+    let id: Int
     let word: String
-    let useCase: String
-    var wordLearned: Bool
+    let translate: String
+    let order: Int
 }

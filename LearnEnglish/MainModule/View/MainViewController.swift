@@ -10,7 +10,6 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    
     private var wordsScreen = WordsScreenVC()
     private var trainingScreen = TrainingScreenVC()
 //    let navigation = UINavigationController(rootViewController: TrainingScreenVC())
